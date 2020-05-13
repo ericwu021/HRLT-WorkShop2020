@@ -6,7 +6,7 @@ var rockSamples=0, paperSamples=0, scissorsSamples=0;
 let isPredicting = false;
 
 async function loadMobilenet() {
-  const mobilenet = await tf.loadLayersModel('https://cdn.jsdelivr.net/gh/ericwu021/HRLT-WorkShop2020@master/model.json');
+  const mobilenet = await tf.loadLayersModel('https://cdn.jsdelivr.net/gh/ericwu021/HRLT-WorkShop2020@master/JS/model.json');
   const layer = mobilenet.getLayer('conv_pw_13_relu');
   return tf.model({inputs: mobilenet.inputs, outputs: layer.output});
 }
